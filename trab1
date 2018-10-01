@@ -1,0 +1,105 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+	
+		
+char *ler_arquivo(char const *argv[],int A, int *tamanho ){
+
+	FILE *arquivo = fopen(argv[A], "r");
+	char aux,*vetor;
+	int i ;
+
+
+
+	if(!arquivo){
+		printf("Arquivo nao encontrado\n");
+		exit (1);
+	}
+	*tamanho = 0;
+
+	while (!feof(arquivo)){
+		aux = fgetc(arquivo);
+		*tamanho = *tamanho + 1;
+	}
+
+	*tamanho = *tamanho - 1;
+
+	vetor = (char *)malloc(*tamanho * sizeof(char));
+
+	fclose(arquivo);
+
+	printf("%d tamanho\n", *tamanho);
+
+	arquivo = fopen(argv[A],"r");
+
+	for (i= 0 ; i<*tamanho ; i++){
+		vetor[i]= fgetc(arquivo);
+	}
+
+	
+	return (vetor);
+}
+	void analyze(char *gene, char *proteina){
+    
+
+    FILE *arqg = fopen (gene,"r");
+	FILE *arqp = fopen (proteina,"r");
+	
+	// int i = 0;
+	// int j = i;
+
+	// for(i = 0; i < tam; i + 3){
+	// 	j = i;
+	// 	while(!diferentes)
+	// 	{
+	// 		if v[i] == v[j+3];
+	// 			diferentes = 1;
+
+	// 		if v[i+1] == v[j+4]
+	// 			diferentes = 1;
+
+	// 		if v[i+2] == v[j+5]
+	// 			diferentes = 1;
+	// 		j = j + 3;
+	// 	}
+	// }
+
+
+	
+	}
+	
+	void cut(char *dna, char *enzima, char opcao[2]){
+
+	}
+
+
+
+int main(int argc,char const *argv[]){
+	
+	if (strcmp(argv[1],"-analyze")==0){
+		analyze(argv[2],argv[3]);
+	}
+	else if (strcmp(agrv[1],"-cut")==0)
+		cut(argv[3],argv[4],argv[2]);
+	
+//	char base[MAX];
+//	char prot[MAX];
+	
+	if ((arqg==NULL) || (arqp==NULL)){
+		printf("Arquivo nao encontrado\n");
+		return (0);
+	}
+	
+//	else{
+ 	
+		
+
+	int i=total_letras_proteina(prot);
+	printf("%d\n",i);
+}
+	int tamanho1,tamanho2;
+	char *v, *w;
+	v = ler_arquivo(argv,1,&tamanho1);
+	w = ler_arquivo(argv,2,&tamanho2);
+}
